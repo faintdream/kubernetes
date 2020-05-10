@@ -1,7 +1,7 @@
 $script = <<-SCRIPT
 echo I am provisioning...
 date > /etc/vagrant_provisioned_at
-#yum upgrade -y
+yum upgrade -y
 yum groupinstall "Server with GUI" "Xfce" -y
 yum install tigervnc-server -y
 cd /etc/systemd/system/ 
