@@ -3,7 +3,7 @@ echo I am provisioning...
 date > /etc/vagrant_provisioned_at
 yum upgrade -y
 yum groupinstall "Server with GUI" "Xfce" -y
-yum install tigervnc-server -y
+yum install tigervnc-server git -y
 cd /etc/systemd/system/ 
 unlink vncserver@:1.service||ln -s /lib/systemd/system/vncserver@.service vncserver@:1.service  
 readlink vncserver@:1.service||ln -s /lib/systemd/system/vncserver@.service vncserver@:1.service
