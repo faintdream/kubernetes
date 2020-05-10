@@ -13,3 +13,10 @@ Most of the time we work on vpn and off vpn and this switching of network often 
 #### How does adding vnc help ?
 
 We can access  gui  on vm,  for example once we install a web based app container inside the pod and want to see the output, all we have to do is `open vnc://localhost:5901` & provide `password` as `password` when prompted on mac ( or install whatever vnc lient you like ) and launch web browser to access it.
+
+### How to use
+* install vagrant and virtual boox
+* download this repo
+* `cd kubernetes`
+* `chmod 755 *.sh && ./call_vagrant.sh`
+* sit back and relax, the first run takes about 8 to 12 mins depending upon your network speed.
