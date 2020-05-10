@@ -28,4 +28,4 @@ echo " "
 echo "calling [ vagrant halt ] "
 vagrant halt
 echo "calling [ vagrant up ] "
-vagrant up --provision
+vagrant up 
