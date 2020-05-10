@@ -12,7 +12,7 @@ spec:
       name: kuard
       volumeMounts:
         - mountPath: "/data"
-           name: "kuard-data"
+          name: "kuard-data"
       ports:
         - containerPort: 8080
           name: http
