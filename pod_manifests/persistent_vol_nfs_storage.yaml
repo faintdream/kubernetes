@@ -18,3 +18,4 @@ spec:
         - containerPort: 8080
           name: http
           protocol: TCP
+## for this to work , we alredy need to have an nfs server running somehwere .
