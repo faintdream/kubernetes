@@ -18,11 +18,39 @@ chmod 0600 /home/$myuser/.vnc/passwd
 systemctl daemon-reload
 systemctl enable vncserver@:1
 systemctl restart vncserver@:1
+
+cat > /etc/systemd/system/vnc-shutdown.service <<-VNC1
+Description='stop vnc at shutdown'
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/vnc-shutdown.sh
+TimeoutStartSec=0
+[Install]
+WantedBy=shutdown.target
+VNC1
+
+echo "creating graceful vnc stop service to be run at shutdown"
+cat > /opt/vnc-shutdown.sh <<-VNC2
+#!/bin/env bash
+echo 'stopping vnc at shutdown'
+systemctl stop vncserver@:1.service
+VNC2
+
+echo 'enabling the newly created vnc shutdown service'
+chmod 750 /opt/vnc-shutdown.sh
+systemctl daemon-reload
+systemctl enable /etc/systemd/system/vnc-shutdown.service
+
+
 SCRIPT
 
 Vagrant.configure("2") do |config|
   config.vm.box = "mrvantage/centos7-minikube"
   config.vm.network :forwarded_port, guest: 5901, host: 5901
   config.vm.network "private_network", type: "dhcp"
+  config.vbguest.auto_update = true
   config.vm.provision "shell", inline: $script
 end
