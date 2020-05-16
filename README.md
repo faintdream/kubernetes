@@ -1,5 +1,11 @@
 # kubernetes
 
+
+#### Update [2020/05/16] virtualbox 6.1.6 host edition compatibility issue
+
+On the latest version 6.1.6 of virtualbox , the virtuabox guest edition is broken, this causes VBOXClient --display to fail, so if that is your issue please downgrade back to previous version of virtualbox and install a compatible virtualbox guest edition.
+to install guest edition using plugin  - run `vagrant plugin vbguest` and add this line `config.vbguest.auto_update = true` to your vagrant file.
+
 #### Using the Vagrant file - ensure you already have virtualbox and vagrant installed
 
 This vagrant file builds kubernetes single node cluster using 'Minikube' for playing with kubernetes features. but when i am on ofice vpn, the network trffic coming out of vm is blocked,  it blocks me.
