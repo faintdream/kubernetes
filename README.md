@@ -1,7 +1,13 @@
 # kubernetes
 
+#### Update [2020/05/16] virtualbox 6.1.8 host edition resolves VboxClient --display compatibility issue
+
+the latest version 6.1.8 resolves the host  VboxClient --display compatibility issue reported on 
+
+~~https://www.virtualbox.org/ticket/19590
 
 #### Update [2020/05/16] virtualbox 6.1.6 host edition compatibility issue
+https://www.virtualbox.org/ticket/19590
 
 On the latest version 6.1.6 of virtualbox , the virtuabox guest edition is broken, this causes VBOXClient --display to fail, so if that is your issue please downgrade back to previous version of virtualbox and install a compatible virtualbox guest edition.
 to install guest edition using plugin  - run `vagrant plugin vbguest` and add this line `config.vbguest.auto_update = true` to your vagrant file.
