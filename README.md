@@ -1,6 +1,6 @@
 # kubernetes
 
-#### Update [2020/05/16] virtualbox 6.1.8 host edition resolves VboxClient --display compatibility issue
+#### Update [2020/05/25] virtualbox 6.1.8 host edition resolves VboxClient --display compatibility issue
 
 the latest version 6.1.8 resolves the host  VboxClient --display compatibility issue reported on 
 
