@@ -4,7 +4,7 @@
 
 the latest version 6.1.8 resolves the host  VboxClient --display compatibility issue reported on 
 
-~~https://www.virtualbox.org/ticket/19590
+<s>https://www.virtualbox.org/ticket/19590</s>
 
 #### Update [2020/05/16] virtualbox 6.1.6 host edition compatibility issue
 https://www.virtualbox.org/ticket/19590
